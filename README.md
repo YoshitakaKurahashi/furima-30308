@@ -36,7 +36,7 @@
 ### Association
 
 - belongs_to : user
-- has_one : purchase
+- has_one    : purchase
 
 
 ## purchases テーブル
@@ -50,10 +50,10 @@
 
 - belongs_to : user
 - belongs_to : item
-- has_one : address
+- has_one    : address
 
 
-## address テーブル
+## addresses テーブル
 
 | Column         | Type       | Options           |
 | -------------- | ---------- | ----------------- |
