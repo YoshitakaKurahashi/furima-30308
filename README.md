@@ -2,16 +2,16 @@
 
 ## users テーブル
 
-| Column             | Type   | Options     |
-| ------------------ | ------ | ----------- |
-| nickname           | string | null: false |
-| email              | string | null: false |
-| encrypted_password | string | null: false |
-| first_name         | string | null: false |
-| last_name          | string | null: false |
-| first_kana         | string | null: false |
-| last_kana          | string | null: false |
-| birthday           | date   | null: false |
+| Column             | Type   | Options      |
+| ------------------ | ------ | ------------ |
+| nickname           | string | null: false  |
+| email              | string | unique: true |
+| encrypted_password | string | null: false  |
+| first_name         | string | null: false  |
+| last_name          | string | null: false  |
+| first_kana         | string | null: false  |
+| last_kana          | string | null: false  |
+| birthday           | date   | null: false  |
 
 ### Association
 
@@ -41,10 +41,10 @@
 
 ## purchases テーブル
 
-| Column     | Type      | Options     |
-| ---------- | --------- | ----------- |
-| user       | reference | null: false |
-| item       | reference | null: false |
+| Column     | Type      | Options           |
+| ---------- | --------- | ----------------- |
+| user       | reference | foreign_key: true |
+| item       | reference | foreign_key: true |
 
 ### Association
 
