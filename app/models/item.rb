@@ -14,7 +14,7 @@ class Item < ApplicationRecord
             presence: true,
             numericality: { other_than: 1 }
   validates :price,
-            # numericality:(greater_than_or_equal_to: 300, less_than_or_equal_to: 9999999), 
+            numericality: {greater_than_or_equal_to: 300, less_than_or_equal_to: 9999999}, 
             format: {with:VALID_PRICE_REGEX}
 
   belongs_to :user
