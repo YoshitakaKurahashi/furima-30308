@@ -8,6 +8,8 @@ class Item < ApplicationRecord
   belongs_to :prefecture
   belongs_to :delivery_day
 
+  VALID_PRICE_REGEX = /\A[0-9]+\z/.freeze
+
   validates :item_name, :item_explanation, :price, presence: true
   validates :item_name, length: {maxmum: 40 }
   validates :item_explanation, length: {maxmum: 1000 }
@@ -18,4 +20,5 @@ class Item < ApplicationRecord
             :delivery_day_id,
             presence: true,
             numericality: { other_than: 1 }
+  validates :price, length: {minimum: 300, maxmum: 9999999}, format:{with:VALID_PRICE_REGEX}
 end
