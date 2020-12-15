@@ -3,6 +3,7 @@ FactoryBot.define do
     transient do
       person              { Gimei.name}
     end
+    id                    {'4'}
     nickname              {Faker::Name.initials(number:5)}
     email                 {Faker::Internet.free_email}
     password              {'1a' + Faker::Internet.password(min_length: 6)}

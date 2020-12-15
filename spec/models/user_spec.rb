@@ -8,6 +8,7 @@ describe User do
 
     context '新規登録がうまくいく時' do
       it "全てのカラムが存在すれば登録できる" do
+        binding.pry
         expect(@user).to be_valid        #「be_valid」...expectのインスタンスが正しく保存されているか判断。
       end
       it "passwordが半角英数字混合の場合は登録できる" do
