@@ -1,6 +1,7 @@
 class ItemsController < ApplicationController
   def index
-    @item = Item.all
+    @items = Item.all
+    @deliveryFee = DeliveryFee.all
   end
 
   def new
