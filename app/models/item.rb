@@ -1,7 +1,7 @@
 class Item < ApplicationRecord
   VALID_PRICE_REGEX = /\A[0-9]+\z/.freeze
 
-  validates :image, :item_name, :item_explanation, :price, :user_id, presence: true
+  validates :image, :item_name, :item_explanation, :price, presence: true
   validates :item_name, length: { maximum: 40 }
   validates :item_explanation, length: { maximum: 1000 }
   validates :item_category_id,
