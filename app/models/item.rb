@@ -9,7 +9,6 @@ class Item < ApplicationRecord
             :delivery_fee_id,
             :prefecture_id,
             :delivery_day_id,
-            :user_id,
             presence: true,
             numericality: { other_than: 1 }
   validates :price,
