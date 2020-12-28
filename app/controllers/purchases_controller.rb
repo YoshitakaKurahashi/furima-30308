@@ -2,17 +2,18 @@ class PurchasesController < ApplicationController
 
   def index
     @item = Item.find(params[:item_id])
-    @purchase = Purchase.new
+    @purchase_address = PurchaseAddress.new
   end
 
   def create
-    @purchase = Purchase.new(purchase_params)
-    # binding.pry
-    if @purchase.valid?
-      pay_item
-      @purchase.save
+    @purchase_address = PurchaseAddress.new(purchase_params)
+    if @purchase_address.valid?
+      binding.pry
+      # pay_item
+      @purchase_address.save
       return redirect_to root_path
     else
+      @item = Item.find(params[:item_id])
       render 'index'
     end
   end
@@ -20,7 +21,9 @@ class PurchasesController < ApplicationController
   private
 
   def purchase_params
-    params.require(:purchase).permit.merge(user_id: current_user.id, item_id: params[:item_id], token: params[:token])
+    params.require(:purchase_address).permit(
+      :postal_code, :prefecture_id, :municipalities, :address, :building, :telephone
+    ).merge(user_id: current_user.id, item_id: params[:item_id])
   end
 
   def pay_item
