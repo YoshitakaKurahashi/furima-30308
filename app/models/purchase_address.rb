@@ -32,7 +32,7 @@ class PurchaseAddress
     #   price: price
     # )
     # user = User.find(current_user)
-    Purchase.create(user_id: user_id, item_id: item_id)
+    # Purchase.create(user_id: user_id, item_id: item_id)
     purchase = Purchase.create(user_id: user_id, item_id: item_id)
     Address.create(
       postal_code: postal_code,
