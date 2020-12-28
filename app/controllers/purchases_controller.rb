@@ -7,6 +7,7 @@ class PurchasesController < ApplicationController
 
   def create
     @purchase_address = PurchaseAddress.new(purchase_params)
+    # binding.pry
     if @purchase_address.valid?
       # binding.pry
       # @item = Item.find(params[:item_id])
@@ -17,6 +18,7 @@ class PurchasesController < ApplicationController
       return redirect_to root_path
     else
       @item = Item.find(params[:item_id])
+      # @purchase_address = PurchaseAddress.new(purchase_params)
       render 'index'
     end
   end
