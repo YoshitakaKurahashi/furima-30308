@@ -5,6 +5,6 @@ FactoryBot.define do
     municipalities { '大阪市' }
     address { '北区梅田１−１' }
     telephone { '09012345678' }
-    token { "tok_abcdefghijk00000000000000000"}
+    token { 'tok_abcdefghijk00000000000000000' }
   end
 end
