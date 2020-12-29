@@ -65,6 +65,11 @@ RSpec.describe PurchaseAddress, type: :model do
         @purchase_address.valid?
         expect(@purchase_address.errors.full_messages).to include("Token can't be blank")
       end
+      it 'userモデルとのレファレンスがないと保存できない' do
+        
+      end
+      it 'itemモデルとのレファレンスがないと保存できない' do
+      end
 
     end
   end
